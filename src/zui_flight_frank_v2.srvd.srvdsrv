@@ -1,0 +1,6 @@
+@EndUserText.label: 'Flight'
+define service ZUI_FLIGHT_FRANK_V2 {
+  expose ZC_FR_Booking  as Bookings;
+  expose ZC_FR_Flight   as Flights;
+  expose ZC_FR_Customer as Customers;
+}

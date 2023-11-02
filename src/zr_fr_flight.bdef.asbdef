@@ -1,0 +1,50 @@
+managed implementation in class zbp_r_fr_flight unique;
+strict ( 2 );
+
+define behavior for ZR_FR_Flight alias Flight
+persistent table zfe_fr_flight
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _Bookings { create; }
+
+  field ( readonly, numbering : managed ) FlightUuid;
+
+  mapping for zfe_fr_flight corresponding
+    {
+      ArrivalTime    = arrival_time;
+      CarrierId      = carrier_id;
+      ConnectionUuid = connection_uuid;
+      DepatureDate   = depature_date;
+      DepatureTime   = depature_time;
+      FlightUuid     = flight_uuid;
+      PlaneId        = plane_id;
+    }
+}
+
+define behavior for ZR_FR_Booking alias Booking
+persistent table zfe_fr_book
+lock dependent by _Flight
+authorization dependent by _Flight
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) FlightUuid;
+  association _Flight;
+
+  field ( readonly, numbering : managed ) BookingUuid;
+
+  mapping for zfe_fr_book corresponding
+    {
+      BookingUuid  = booking_uuid;
+      CustomerId   = customer_id;
+      FlightUuid   = flight_uuid;
+      Price        = price;
+      CurrencyCode = currency_code;
+    }
+}

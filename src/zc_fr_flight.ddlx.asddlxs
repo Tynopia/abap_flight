@@ -1,0 +1,87 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_FR_Flight with
+{
+  /*Facets */
+  @UI.facet: [
+    {
+      position: 10,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Flight',
+      label: 'Flight Details'
+    },
+    {
+      position: 20,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_Bookings',
+      label: 'Bookings'
+    }
+  ]
+
+  @UI.fieldGroup: [{
+    position: 10,
+    qualifier: 'Flight'
+   }]
+  @UI.lineItem: [{
+    position: 10
+  }]
+  FlightUuid;
+
+  @UI.fieldGroup: [{
+      position: 20,
+      qualifier: 'Flight'
+     }]
+  @UI.lineItem: [{
+    position: 20
+  }]
+  ConnectionUuid;
+
+
+  @UI.fieldGroup: [{
+    position: 30,
+    qualifier: 'Flight'
+   }]
+  @UI.lineItem: [{
+    position: 30
+  }]
+  PlaneId;
+
+  @UI.fieldGroup: [{
+    position: 40,
+    qualifier: 'Flight'
+   }]
+  @UI.lineItem: [{
+    position: 40
+  }]
+  CarrierId;
+
+  @UI.fieldGroup: [{
+    position: 50,
+    qualifier: 'Flight'
+   }]
+  @UI.lineItem: [{
+    position: 50
+  }]
+  DepatureDate;
+
+  @UI.fieldGroup: [{
+    position: 60,
+    qualifier: 'Flight'
+   }]
+  @UI.lineItem: [{
+    position: 60
+  }]
+  DepatureTime;
+
+  @UI.fieldGroup: [{
+    position: 70,
+    qualifier: 'Flight'
+   }]
+  @UI.lineItem: [{
+    position: 70
+  }]
+  ArrivalTime;
+
+  /* Associations */
+  //_Bookings;
+
+}

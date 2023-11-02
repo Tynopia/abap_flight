@@ -1,0 +1,13 @@
+managed implementation in class zbp_r_fr_customer unique;
+strict ( 2 );
+
+define behavior for ZR_FR_Customer //alias <alias_name>
+persistent table zfe_fr_customer
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+}

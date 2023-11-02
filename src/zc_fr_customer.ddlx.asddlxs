@@ -1,0 +1,24 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZC_FR_Customer
+  with 
+{
+  @UI.lineItem: [{
+    position: 10
+  }]
+  CustomerUuid;
+  
+  @UI.lineItem: [{
+    position: 20
+  }]
+  Firstname;
+  
+  @UI.lineItem: [{
+    position: 30
+  }]
+  Lastname;
+  
+  @UI.lineItem: [{
+    position: 40
+  }]
+  name;
+}

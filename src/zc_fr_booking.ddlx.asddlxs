@@ -1,0 +1,58 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZC_FR_Booking with
+{
+
+  /* Facets */
+
+  @UI.facet: [
+    {
+      position: 10,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Booking',
+      label: 'Booking'
+    },
+    {
+      position: 20,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_Customer',
+      label: 'Customer'
+    }
+  ]
+
+  /* Fields */
+
+  @UI.fieldGroup: [{
+    position: 10,
+    qualifier: 'Booking'
+   }]
+  @UI.lineItem: [{
+    position: 10
+  }]
+  BookingUuid;
+
+  @UI.fieldGroup: [{
+    position: 20,
+    qualifier: 'Booking'
+   }]
+  @UI.lineItem: [{
+    position: 20
+  }]
+  FlightUuid;
+  
+  @UI.fieldGroup: [{
+    position: 40,
+    qualifier: 'Booking'
+   }]
+  @UI.lineItem: [{
+    position: 30
+  }]
+  Price;
+  
+  /* Associations */
+  
+  @UI.lineItem: [{
+    position: 40
+  }]
+  _Flight;
+
+}
